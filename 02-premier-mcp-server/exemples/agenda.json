@@ -1,0 +1,17 @@
+[
+  {
+    "datetime": "2026-05-20T09:00:00+01:00",
+    "titre": "Consultation matinale (cabinet)",
+    "lieu": "Cabinet, Fès"
+  },
+  {
+    "datetime": "2026-05-22T14:30:00+01:00",
+    "titre": "Réunion technique projet MASI",
+    "lieu": "À distance (Telegram)"
+  },
+  {
+    "datetime": "2026-05-25T11:00:00+01:00",
+    "titre": "Revue financière mensuelle",
+    "lieu": "À distance"
+  }
+]

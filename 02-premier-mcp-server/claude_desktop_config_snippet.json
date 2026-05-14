@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mon-premier-serveur": {
+      "command": "python3",
+      "args": [
+        "/CHEMIN/ABSOLU/VERS/agents-en-pratique/02-premier-mcp-server/mcp_server.py"
+      ]
+    }
+  }
+}
