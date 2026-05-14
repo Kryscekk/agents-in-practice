@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 04 — Un CLAUDE.md pour ton projet
 
 **Difficulté** : 🟢 Débutant  |  **Durée** : 30 min de lecture, 1h de pratique

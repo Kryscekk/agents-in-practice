@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 02 — Qu'est-ce qu'un agent IA, vraiment ?
 
 **Difficulté** : 🟢 Débutant  |  **Durée** : 20 min de lecture

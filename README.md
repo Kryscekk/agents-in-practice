@@ -44,9 +44,9 @@ None of these systems is open source — they hold sensitive data (patients, acc
 | # | Tutorial | Folder | Status |
 |---|---|---|---|
 | **01** | How to talk to Claude so he understands you | [`01-talking-to-claude/`](01-talking-to-claude/) | ✅ 🇫🇷 |
-| **02** | What is an AI agent, really? | [`02-what-is-an-agent/`](02-what-is-an-agent/) | ✅ 🇫🇷 |
-| **03** | Building your first brief (a Claude role) | [`03-your-first-brief/`](03-your-first-brief/) | ✅ 🇫🇷 |
-| **04** | A `CLAUDE.md` for your project | [`04-claude-md/`](04-claude-md/) | ✅ 🇫🇷 |
+| **02** | What is an AI agent, really? | [`02-what-is-an-agent/`](02-what-is-an-agent/) | ✅ 🇬🇧 🇫🇷 |
+| **03** | Building your first brief (a Claude role) | [`03-your-first-brief/`](03-your-first-brief/) | ✅ 🇬🇧 🇫🇷 |
+| **04** | A `CLAUDE.md` for your project | [`04-claude-md/`](04-claude-md/) | ✅ 🇬🇧 🇫🇷 |
 | **05** | Your first agent in chat (no code) | [`05-first-agent-in-chat/`](05-first-agent-in-chat/) | ✅ 🇫🇷 |
 | **06** | When and why to move to the API? | [`06-moving-to-the-api/`](06-moving-to-the-api/) | ✅ 🇫🇷 |
 
@@ -147,9 +147,9 @@ C'est l'ordre que j'ai réellement suivi pendant mes 6 premières semaines. Les 
 | # | Tuto | Dossier | Statut |
 |---|---|---|---|
 | **01** | Comment parler à Claude pour qu'il te comprenne | [`01-talking-to-claude/`](01-talking-to-claude/) | ✅ 🇫🇷 |
-| **02** | Qu'est-ce qu'un agent IA, vraiment ? | [`02-what-is-an-agent/`](02-what-is-an-agent/) | ✅ 🇫🇷 |
-| **03** | Construire ton premier brief (un rôle Claude) | [`03-your-first-brief/`](03-your-first-brief/) | ✅ 🇫🇷 |
-| **04** | Un `CLAUDE.md` pour ton projet | [`04-claude-md/`](04-claude-md/) | ✅ 🇫🇷 |
+| **02** | Qu'est-ce qu'un agent IA, vraiment ? | [`02-what-is-an-agent/`](02-what-is-an-agent/) | ✅ 🇬🇧 🇫🇷 |
+| **03** | Construire ton premier brief (un rôle Claude) | [`03-your-first-brief/`](03-your-first-brief/) | ✅ 🇬🇧 🇫🇷 |
+| **04** | Un `CLAUDE.md` pour ton projet | [`04-claude-md/`](04-claude-md/) | ✅ 🇬🇧 🇫🇷 |
 | **05** | Ton premier agent en chat (sans code) | [`05-first-agent-in-chat/`](05-first-agent-in-chat/) | ✅ 🇫🇷 |
 | **06** | Quand et pourquoi passer à l'API ? | [`06-moving-to-the-api/`](06-moving-to-the-api/) | ✅ 🇫🇷 |
 
