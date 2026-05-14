@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 08 — Les 4 piliers d'un agent solide
 
 **Difficulté** : 🟡 Intermédiaire  |  **Durée** : 45 min de lecture, semaines d'application
