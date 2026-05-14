@@ -1,9 +1,9 @@
 {
   "mcpServers": {
-    "mon-premier-serveur": {
+    "my-first-server": {
       "command": "python3",
       "args": [
-        "/CHEMIN/ABSOLU/VERS/agents-en-pratique/02-premier-mcp-server/mcp_server.py"
+        "/ABSOLUTE/PATH/TO/agents-in-practice/09-first-mcp-server/mcp_server.py"
       ]
     }
   }

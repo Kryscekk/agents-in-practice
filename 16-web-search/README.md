@@ -1,26 +1,28 @@
-# Recherche web gratuite depuis ton agent
+> 🇫🇷 **Lire en français** : [README.fr.md](README.fr.md)
 
-**Difficulté** : 🟡 Intermédiaire  |  **Durée estimée** : 30 min
+# 16 — Free web search from your agent
 
----
-
-## 🚧 Tutoriel en cours de rédaction
-
-Ce dossier est un placeholder. Le tutoriel sera publié prochainement.
-
-**Suis le repo** ([⭐ Star](https://github.com/Kryscekk/agents-en-pratique)) pour être notifié quand il sort.
+**Difficulty**: 🟡 Intermediate  |  **Estimated time**: 30 min
 
 ---
 
-## Ce qu'on apprendra (préview)
+## 🚧 Tutorial being written
 
-À écrire.
+This folder is a placeholder. The full tutorial is coming soon.
 
-## Ce qu'on construira (préview)
+**Star the repo** ([⭐ Star](https://github.com/Kryscekk/agents-in-practice)) to be notified when it's released.
 
-À écrire.
+---
 
-## Pré-requis
+## What we'll learn (preview)
 
-- Avoir suivi les tutos précédents (recommandé mais pas obligatoire)
-- Voir [README racine](../README.md) pour les pré-requis communs
+To be written.
+
+## What we'll build (preview)
+
+To be written.
+
+## Prerequisites
+
+- Having followed previous tutorials (recommended but not required)
+- See [root README](../README.md) for common prerequisites

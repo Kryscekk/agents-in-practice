@@ -1,9 +1,8 @@
 """
+My first MCP server — 4 useful daily tools.
 Mon premier MCP server — 4 outils utiles au quotidien.
 
-Lance :
-    python3 mcp_server.py
-
+To connect to Claude Desktop, see the README, section "Connect to Claude Desktop".
 Pour brancher à Claude Desktop : voir le README, section "Connecter à Claude Desktop".
 """
 from __future__ import annotations
@@ -15,42 +14,42 @@ from pathlib import Path
 from fastmcp import FastMCP
 
 # === Configuration ===
-# Chemins par défaut — modifiables via variables d'environnement ou à la main
+# Default paths — modifiable via env vars or by hand
 HOME = Path.home()
-AGENTS_DIR = HOME / ".agents"               # dossier où vivent les données de tes agents
-AGENDA_FILE = AGENTS_DIR / "agenda.json"    # ta liste de rdv
-COSTS_FILE = AGENTS_DIR / "api_costs.jsonl" # log append-only des appels API
-PROJETS_DIR = HOME / "projets"              # tes repos git
+AGENTS_DIR = HOME / ".agents"               # directory where your agents' data lives
+AGENDA_FILE = AGENTS_DIR / "agenda.json"    # your appointments list
+COSTS_FILE = AGENTS_DIR / "api_costs.jsonl" # append-only log of API calls
+PROJECTS_DIR = HOME / "projects"            # your git repos
 
-# Allowlist de services systemd qu'on autorise à inspecter
-# (évite que Claude liste les logs de services sensibles type sshd)
-SERVICES_AUTORISES = {"nginx", "postgresql", "mysql", "redis", "docker", "cron", "fail2ban"}
+# Allowlist of systemd services we permit to inspect.
+# Prevents Claude from listing logs of sensitive services like sshd.
+ALLOWED_SERVICES = {"nginx", "postgresql", "mysql", "redis", "docker", "cron", "fail2ban"}
 
 
-mcp = FastMCP("mon-premier-serveur")
+mcp = FastMCP("my-first-server")
 
 
 @mcp.tool
 def recent_errors(service: str, hours: int = 24) -> str:
-    """Retourne les erreurs récentes d'un service systemd (Linux).
-    
-    Cherche les lignes de niveau ERROR/CRITICAL/EMERGENCY dans les logs systemd
-    des dernières N heures pour le service demandé.
-    
+    """Returns recent errors from a systemd service (Linux).
+
+    Searches for ERROR/CRITICAL/EMERGENCY level lines in the systemd logs
+    of the last N hours for the requested service.
+
     Args:
-        service: nom du service (ex: 'nginx', 'postgresql'). Doit être dans l'allowlist.
-        hours: fenêtre de recherche en heures (1 à 168 = 1 semaine max).
-    
+        service: service name (e.g. 'nginx', 'postgresql'). Must be in the allowlist.
+        hours: search window in hours (1 to 168 = 1 week max).
+
     Returns:
-        Texte avec les erreurs trouvées, ou message si rien.
+        Text with the errors found, or a message if none.
     """
-    if service not in SERVICES_AUTORISES:
-        return (f"Service '{service}' pas dans l'allowlist. "
-                f"Autorisés : {', '.join(sorted(SERVICES_AUTORISES))}")
-    
-    hours = max(1, min(hours, 168))  # borne entre 1h et 1 semaine
+    if service not in ALLOWED_SERVICES:
+        return (f"Service '{service}' not in allowlist. "
+                f"Allowed: {', '.join(sorted(ALLOWED_SERVICES))}")
+
+    hours = max(1, min(hours, 168))  # clamp between 1h and 1 week
     since = f"{hours}h ago"
-    
+
     try:
         result = subprocess.run(
             ["journalctl", "-u", service, "--since", since,
@@ -58,148 +57,151 @@ def recent_errors(service: str, hours: int = 24) -> str:
             capture_output=True, text=True, timeout=10
         )
     except FileNotFoundError:
-        return "journalctl introuvable. Ce tool nécessite Linux avec systemd."
+        return "journalctl not found. This tool requires Linux with systemd."
     except subprocess.TimeoutExpired:
-        return "journalctl a mis trop de temps à répondre (>10s)."
-    
+        return "journalctl took too long to respond (>10s)."
+
     output = result.stdout.strip()
     if not output or "No entries" in output:
-        return f"Aucune erreur pour {service} sur les {hours} dernières heures. ✓"
-    
-    return f"Erreurs {service} (dernières {hours}h) :\n\n{output}"
+        return f"No errors for {service} in the last {hours} hours. ✓"
+
+    return f"Errors for {service} (last {hours}h):\n\n{output}"
 
 
 @mcp.tool
 def git_status_all_projects(base_dir: str = "") -> str:
-    """Donne l'état git de tous tes projets en une fois.
-    
-    Itère sur les sous-dossiers de base_dir qui sont des repos git, et reporte
-    pour chacun : branche courante, fichiers modifiés non-commités, et nombre
-    de commits ahead/behind par rapport au remote.
-    
+    """Reports git status for all your projects at once.
+
+    Iterates over subfolders of base_dir that are git repos, and reports
+    for each: current branch, modified uncommitted files, and number of
+    commits ahead/behind compared to the remote.
+
     Args:
-        base_dir: dossier qui contient tes repos. Défaut : ~/projets/
-    
+        base_dir: folder containing your repos. Default: ~/projects/
+
     Returns:
-        Tableau lisible des projets et leur état git.
+        Readable table of projects and their git state.
     """
-    base = Path(base_dir) if base_dir else PROJETS_DIR
+    base = Path(base_dir) if base_dir else PROJECTS_DIR
     if not base.exists():
-        return f"Dossier {base} n'existe pas. Crée-le ou passe un autre chemin via base_dir."
-    
-    lignes = [f"État git de tes projets dans {base} :\n"]
-    repos_trouves = 0
-    
+        return f"Folder {base} doesn't exist. Create it or pass another path via base_dir."
+
+    lines = [f"Git status of your projects in {base}:\n"]
+    repos_found = 0
+
     for sub in sorted(base.iterdir()):
         if not sub.is_dir() or not (sub / ".git").exists():
             continue
-        repos_trouves += 1
-        
+        repos_found += 1
+
         try:
-            # branche courante
-            branche = subprocess.run(
+            # current branch
+            branch = subprocess.run(
                 ["git", "-C", str(sub), "rev-parse", "--abbrev-ref", "HEAD"],
                 capture_output=True, text=True, timeout=5
             ).stdout.strip() or "(detached)"
-            
-            # fichiers modifiés
+
+            # modified files
             status = subprocess.run(
                 ["git", "-C", str(sub), "status", "--porcelain"],
                 capture_output=True, text=True, timeout=5
             ).stdout.strip()
             modifs = len([l for l in status.split("\n") if l.strip()])
-            
+
             # ahead/behind
             try:
                 tracking = subprocess.run(
                     ["git", "-C", str(sub), "rev-list", "--left-right", "--count",
-                     f"{branche}...origin/{branche}"],
+                     f"{branch}...origin/{branch}"],
                     capture_output=True, text=True, timeout=5
                 ).stdout.strip()
                 ahead, behind = tracking.split("\t") if tracking else ("0", "0")
             except Exception:
                 ahead, behind = "?", "?"
-            
-            etat = "✓ clean" if modifs == 0 else f"⚠ {modifs} fichier(s) modifié(s)"
-            lignes.append(f"  • {sub.name:20s} [{branche}] {etat} (↑{ahead} ↓{behind})")
+
+            state = "✓ clean" if modifs == 0 else f"⚠ {modifs} modified file(s)"
+            lines.append(f"  • {sub.name:20s} [{branch}] {state} (↑{ahead} ↓{behind})")
         except Exception as e:
-            lignes.append(f"  • {sub.name}: erreur ({e})")
-    
-    if repos_trouves == 0:
-        return f"Aucun repo git trouvé dans {base}. Mets tes projets git dans ce dossier ou passe base_dir."
-    
-    return "\n".join(lignes)
+            lines.append(f"  • {sub.name}: error ({e})")
+
+    if repos_found == 0:
+        return f"No git repos found in {base}. Put your git projects there or pass base_dir."
+
+    return "\n".join(lines)
 
 
 @mcp.tool
-def prochain_rdv(limite: int = 3) -> str:
-    """Retourne tes prochains rendez-vous.
-    
-    Lit ~/.agents/agenda.json (format : liste d'objets {datetime, titre, lieu}).
-    Filtre ceux dans le futur, trie, et retourne les N premiers.
-    
+def next_appointment(limit: int = 3) -> str:
+    """Returns your next appointments.
+
+    Reads ~/.agents/agenda.json (format: list of objects {datetime, title, location}).
+    Filters those in the future, sorts, and returns the first N.
+
     Args:
-        limite: nombre de prochains rdv à retourner (1 à 20).
-    
+        limit: number of next appointments to return (1 to 20).
+
     Returns:
-        Liste lisible des prochains rdv, ou message si agenda vide / pas de rdv futur.
+        Readable list of next appointments, or message if agenda is empty / no future appointment.
     """
     if not AGENDA_FILE.exists():
-        return (f"Fichier {AGENDA_FILE} introuvable. "
-                f"Copie le fichier exemple : cp exemples/agenda.json ~/.agents/agenda.json")
-    
+        return (f"File {AGENDA_FILE} not found. "
+                f"Copy the example file: cp examples/agenda.json ~/.agents/agenda.json")
+
     try:
         with open(AGENDA_FILE, encoding="utf-8") as f:
-            rdv_list = json.load(f)
+            appointments = json.load(f)
     except json.JSONDecodeError as e:
-        return f"Fichier agenda mal formé : {e}"
-    
-    limite = max(1, min(limite, 20))
-    maintenant = datetime.now(timezone.utc)
-    futurs = []
-    
-    for rdv in rdv_list:
+        return f"Agenda file malformed: {e}"
+
+    limit = max(1, min(limit, 20))
+    now = datetime.now(timezone.utc)
+    future = []
+
+    for appt in appointments:
         try:
-            dt = datetime.fromisoformat(rdv["datetime"].replace("Z", "+00:00"))
+            # Support both new (title/location) and legacy (titre/lieu) keys
+            dt = datetime.fromisoformat(appt["datetime"].replace("Z", "+00:00"))
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
-            if dt > maintenant:
-                futurs.append((dt, rdv.get("titre", "(sans titre)"), rdv.get("lieu", "")))
+            if dt > now:
+                title = appt.get("title", appt.get("titre", "(untitled)"))
+                location = appt.get("location", appt.get("lieu", ""))
+                future.append((dt, title, location))
         except (KeyError, ValueError):
             continue
-    
-    if not futurs:
-        return "Pas de rendez-vous à venir. Profite. 🌴"
-    
-    futurs.sort()
-    lignes = ["Tes prochains rendez-vous :\n"]
-    for dt, titre, lieu in futurs[:limite]:
-        local = dt.astimezone()  # convertit en heure locale système
-        lieu_str = f" — {lieu}" if lieu else ""
-        lignes.append(f"  • {local.strftime('%a %d %b %H:%M')} : {titre}{lieu_str}")
-    
-    return "\n".join(lignes)
+
+    if not future:
+        return "No upcoming appointments. Enjoy. 🌴"
+
+    future.sort()
+    lines = ["Your next appointments:\n"]
+    for dt, title, location in future[:limit]:
+        local = dt.astimezone()  # convert to local system time
+        loc_str = f" — {location}" if location else ""
+        lines.append(f"  • {local.strftime('%a %d %b %H:%M')}: {title}{loc_str}")
+
+    return "\n".join(lines)
 
 
 @mcp.tool
-def cout_api_aujourd_hui() -> str:
-    """Calcule combien tu as dépensé en API Anthropic aujourd'hui.
-    
-    Lit ~/.agents/api_costs.jsonl (1 ligne JSON par appel API, avec champs
-    timestamp et cost_usd). Filtre la journée en cours et somme.
-    
+def api_cost_today() -> str:
+    """Computes how much you've spent on the Anthropic API today.
+
+    Reads ~/.agents/api_costs.jsonl (1 JSON line per API call, with timestamp
+    and cost_usd fields). Filters today and sums.
+
     Returns:
-        Résumé : nombre d'appels, coût total en $ et MAD approximatif.
+        Summary: number of calls and total cost in $.
     """
     if not COSTS_FILE.exists():
-        return (f"Fichier {COSTS_FILE} introuvable. "
-                f"Le tuto #05 t'apprend à le générer. "
-                f"En attendant : cp exemples/api_costs.jsonl ~/.agents/api_costs.jsonl")
-    
-    aujourdhui = datetime.now().date()
-    appels = 0
+        return (f"File {COSTS_FILE} not found. "
+                f"Tutorial 12 teaches you to generate it. "
+                f"For now: cp examples/api_costs.jsonl ~/.agents/api_costs.jsonl")
+
+    today = datetime.now().date()
+    calls = 0
     total_usd = 0.0
-    
+
     with open(COSTS_FILE, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
@@ -208,19 +210,16 @@ def cout_api_aujourd_hui() -> str:
             try:
                 entry = json.loads(line)
                 ts = datetime.fromisoformat(entry["timestamp"].replace("Z", "+00:00"))
-                if ts.date() == aujourdhui:
-                    appels += 1
+                if ts.date() == today:
+                    calls += 1
                     total_usd += float(entry.get("cost_usd", 0))
             except (json.JSONDecodeError, KeyError, ValueError):
                 continue
-    
-    if appels == 0:
-        return "Aucun appel API aujourd'hui (ou fichier exemple à brancher). 💤"
-    
-    total_mad = total_usd * 10  # approximation grossière USD→MAD
-    return (f"Aujourd'hui : {appels} appel(s) API, "
-            f"coût total {total_usd:.4f} $ "
-            f"(≈ {total_mad:.3f} MAD)")
+
+    if calls == 0:
+        return "No API calls today (or example file to plug in). 💤"
+
+    return f"Today: {calls} API call(s), total cost ${total_usd:.4f}"
 
 
 if __name__ == "__main__":

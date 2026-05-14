@@ -66,8 +66,8 @@ Le serveur lit deux fichiers locaux (pour `prochain_rdv` et `cout_api_aujourd_hu
 
 ```bash
 mkdir -p ~/.agents
-cp exemples/agenda.json ~/.agents/agenda.json
-cp exemples/api_costs.jsonl ~/.agents/api_costs.jsonl
+cp examples/agenda.json ~/.agents/agenda.json
+cp examples/api_costs.jsonl ~/.agents/api_costs.jsonl
 ```
 
 Tu peux modifier ces fichiers avec tes propres données ensuite.
@@ -105,7 +105,7 @@ Ajoute (ou complète si le fichier existe déjà) :
     "mon-premier-serveur": {
       "command": "python3",
       "args": [
-        "/CHEMIN/ABSOLU/VERS/agents-en-pratique/09-first-mcp-server/mcp_server.py"
+        "/CHEMIN/ABSOLU/VERS/agents-in-practice/09-first-mcp-server/mcp_server.py"
       ]
     }
   }
