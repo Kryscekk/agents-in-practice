@@ -52,12 +52,12 @@ Aucun de ces systèmes n'est public — ils contiennent des données sensibles (
 
 | # | Tuto | Difficulté | Durée |
 |---|---|---|---|
-| **01** | Comment parler à Claude pour qu'il te comprenne | 🟢 Débutant | 20 min |
-| **02** | Qu'est-ce qu'un agent IA, vraiment ? | 🟢 Débutant | 20 min |
+| **01 ✅** | Comment parler à Claude pour qu'il te comprenne | 🟢 Débutant | 20 min |
+| **02 ✅** | Qu'est-ce qu'un agent IA, vraiment ? | 🟢 Débutant | 20 min |
 | **03 ✅** | Construire ton premier brief (un rôle Claude) | 🟢 Débutant | 30 min + 1h pratique |
 | **04 ✅** | Un `CLAUDE.md` pour ton projet | 🟢 Débutant | 30 min + 1h pratique |
-| **05** | Ton premier agent en chat (sans code) | 🟢 Débutant | 45 min |
-| **06** | Quand et pourquoi passer à l'API ? | 🟢 Débutant | 15 min |
+| **05 ✅** | Ton premier agent en chat (sans code) | 🟢 Débutant | 45 min |
+| **06 ✅** | Quand et pourquoi passer à l'API ? | 🟢 Débutant | 15 min |
 
 ### Partie 2 — Construire des agents en Python
 
