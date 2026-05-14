@@ -64,4 +64,4 @@ Thumbs.db
 .local/
 
 # Exception : fichiers exemples dans les tutos
-!02-premier-mcp-server/exemples/api_costs.jsonl
+!09-first-mcp-server/examples/api_costs.jsonl
