@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 02 — Ton premier MCP server (4 outils utiles)
 
 **Difficulté** : 🟢 Débutant  |  **Durée** : 30 min

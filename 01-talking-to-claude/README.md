@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 01 — Comment parler à Claude pour qu'il te comprenne
 
 **Difficulté** : 🟢 Débutant  |  **Durée** : 20 min de lecture, 30 min de pratique

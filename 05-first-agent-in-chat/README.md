@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 05 — Ton premier agent en chat (sans code)
 
 **Difficulté** : 🟢 Débutant  |  **Durée** : 30 min de lecture, 1h-2h de pratique

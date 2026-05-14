@@ -9,7 +9,7 @@
 
 **Author**: Driss Amiroune — urologist in Fès, Morocco. Self-taught software architect.
 
-This repo was originally written in French. **Tutorials are being translated to English progressively** — each tutorial below shows its current language status. Full English version expected by month 3.
+This repo was originally written in French. **All 9 published tutorials are now available in English** (translation completed May 2026). Tutorials 10-17 are still being written and will be released in both languages.
 
 🇫🇷 [Aussi disponible en français — cliquer ici](#français)
 
@@ -43,25 +43,25 @@ None of these systems is open source — they hold sensitive data (patients, acc
 
 | # | Tutorial | Folder | Status |
 |---|---|---|---|
-| **01** | How to talk to Claude so he understands you | [`01-talking-to-claude/`](01-talking-to-claude/) | ✅ 🇫🇷 |
+| **01** | How to talk to Claude so he understands you | [`01-talking-to-claude/`](01-talking-to-claude/) | ✅ 🇬🇧 🇫🇷 |
 | **02** | What is an AI agent, really? | [`02-what-is-an-agent/`](02-what-is-an-agent/) | ✅ 🇬🇧 🇫🇷 |
 | **03** | Building your first brief (a Claude role) | [`03-your-first-brief/`](03-your-first-brief/) | ✅ 🇬🇧 🇫🇷 |
 | **04** | A `CLAUDE.md` for your project | [`04-claude-md/`](04-claude-md/) | ✅ 🇬🇧 🇫🇷 |
-| **05** | Your first agent in chat (no code) | [`05-first-agent-in-chat/`](05-first-agent-in-chat/) | ✅ 🇫🇷 |
-| **06** | When and why to move to the API? | [`06-moving-to-the-api/`](06-moving-to-the-api/) | ✅ 🇫🇷 |
+| **05** | Your first agent in chat (no code) | [`05-first-agent-in-chat/`](05-first-agent-in-chat/) | ✅ 🇬🇧 🇫🇷 |
+| **06** | When and why to move to the API? | [`06-moving-to-the-api/`](06-moving-to-the-api/) | ✅ 🇬🇧 🇫🇷 |
 
 ### Part 2 — Building agents in Python
 
 | # | Tutorial | Folder | Status |
 |---|---|---|---|
-| **07** | Your first Anthropic API call | [`07-first-api-call/`](07-first-api-call/) | ✅ 🇫🇷 |
+| **07** | Your first Anthropic API call | [`07-first-api-call/`](07-first-api-call/) | ✅ 🇬🇧 🇫🇷 |
 | **08** | **The 4 pillars of a production-grade agent** | [`08-the-4-pillars/`](08-the-4-pillars/) | ✅ 🇬🇧 🇫🇷 |
 
 ### Part 3 — Giving Claude tools (MCP)
 
 | # | Tutorial | Folder | Status |
 |---|---|---|---|
-| **09** | Your first MCP server (4 useful tools) | [`09-first-mcp-server/`](09-first-mcp-server/) | ✅ 🇫🇷 |
+| **09** | Your first MCP server (4 useful tools) | [`09-first-mcp-server/`](09-first-mcp-server/) | ✅ 🇬🇧 🇫🇷 |
 | **10** | Running your agent 24/7 with systemd | [`10-systemd-for-your-agent/`](10-systemd-for-your-agent/) | 🚧 |
 | **11** | Making your agent speak via Telegram | [`11-telegram-bot/`](11-telegram-bot/) | 🚧 |
 
@@ -104,9 +104,9 @@ For **Parts 2-4** (tutorials 07+):
 
 ## Languages
 
-- 🇫🇷 **French** — original reference version, currently most complete
-- 🇬🇧 **English** — translation in progress (priority: foundational tutorials 03, 04, 08, then the rest)
-- 🇲🇦 **العربية** — planned starting month 5 once English is complete
+- 🇫🇷 **French** — original reference version, all 9 published tutorials complete
+- 🇬🇧 **English** — all 9 published tutorials translated. New tutorials (10-17) will be written in both languages.
+- 🇲🇦 **العربية** — planned starting month 5
 
 ## License
 
@@ -146,25 +146,25 @@ C'est l'ordre que j'ai réellement suivi pendant mes 6 premières semaines. Les 
 
 | # | Tuto | Dossier | Statut |
 |---|---|---|---|
-| **01** | Comment parler à Claude pour qu'il te comprenne | [`01-talking-to-claude/`](01-talking-to-claude/) | ✅ 🇫🇷 |
+| **01** | Comment parler à Claude pour qu'il te comprenne | [`01-talking-to-claude/`](01-talking-to-claude/) | ✅ 🇬🇧 🇫🇷 |
 | **02** | Qu'est-ce qu'un agent IA, vraiment ? | [`02-what-is-an-agent/`](02-what-is-an-agent/) | ✅ 🇬🇧 🇫🇷 |
 | **03** | Construire ton premier brief (un rôle Claude) | [`03-your-first-brief/`](03-your-first-brief/) | ✅ 🇬🇧 🇫🇷 |
 | **04** | Un `CLAUDE.md` pour ton projet | [`04-claude-md/`](04-claude-md/) | ✅ 🇬🇧 🇫🇷 |
-| **05** | Ton premier agent en chat (sans code) | [`05-first-agent-in-chat/`](05-first-agent-in-chat/) | ✅ 🇫🇷 |
-| **06** | Quand et pourquoi passer à l'API ? | [`06-moving-to-the-api/`](06-moving-to-the-api/) | ✅ 🇫🇷 |
+| **05** | Ton premier agent en chat (sans code) | [`05-first-agent-in-chat/`](05-first-agent-in-chat/) | ✅ 🇬🇧 🇫🇷 |
+| **06** | Quand et pourquoi passer à l'API ? | [`06-moving-to-the-api/`](06-moving-to-the-api/) | ✅ 🇬🇧 🇫🇷 |
 
 ### Partie 2 — Construire des agents en Python
 
 | # | Tuto | Dossier | Statut |
 |---|---|---|---|
-| **07** | Ton premier appel API Anthropic | [`07-first-api-call/`](07-first-api-call/) | ✅ 🇫🇷 |
+| **07** | Ton premier appel API Anthropic | [`07-first-api-call/`](07-first-api-call/) | ✅ 🇬🇧 🇫🇷 |
 | **08** | **Les 4 piliers d'un agent solide** | [`08-the-4-pillars/`](08-the-4-pillars/) | ✅ 🇬🇧 🇫🇷 |
 
 ### Partie 3 — Donner des outils à Claude (MCP)
 
 | # | Tuto | Dossier | Statut |
 |---|---|---|---|
-| **09** | Ton premier MCP server (4 outils utiles) | [`09-first-mcp-server/`](09-first-mcp-server/) | ✅ 🇫🇷 |
+| **09** | Ton premier MCP server (4 outils utiles) | [`09-first-mcp-server/`](09-first-mcp-server/) | ✅ 🇬🇧 🇫🇷 |
 | **10** | Faire tourner ton agent 24/7 avec systemd | [`10-systemd-for-your-agent/`](10-systemd-for-your-agent/) | 🚧 |
 | **11** | Faire parler ton agent avec Telegram | [`11-telegram-bot/`](11-telegram-bot/) | 🚧 |
 

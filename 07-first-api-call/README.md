@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 01 — Ton premier appel API Anthropic en Python
 
 **Difficulté** : 🟢 Débutant  |  **Durée** : 15 min

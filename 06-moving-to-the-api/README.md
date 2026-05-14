@@ -1,3 +1,5 @@
+> 🇬🇧 **English version**: [README.en.md](README.en.md)
+
 # 06 — Quand et pourquoi passer à l'API ?
 
 **Difficulté** : 🟢 Débutant  |  **Durée** : 15 min de lecture
