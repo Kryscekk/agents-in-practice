@@ -8,6 +8,21 @@
 
 ---
 
+## Table of contents
+
+1. [Why this tutorial exists](#why-this-tutorial-exists)
+2. [Pillar 1 — Observability](#pillar-1--observability)
+3. [Pillar 2 — Reliability](#pillar-2--reliability)
+4. [Pillar 3 — Security](#pillar-3--security)
+5. [Pillar 4 — Deployment](#pillar-4--deployment)
+6. [Putting the four pillars together](#putting-the-four-pillars-together)
+7. [How the four pillars reinforce each other](#how-the-four-pillars-reinforce-each-other)
+8. [Common mistakes](#common-mistakes)
+9. [Further reading](#further-reading)
+10. [Memorable recap](#memorable-recap)
+
+---
+
 ## Why this tutorial exists
 
 I wrote my first Python agent in April 2026. It did two things: read a PDF, send a Telegram message. It worked. Once.

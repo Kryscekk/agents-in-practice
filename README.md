@@ -1,5 +1,5 @@
 > ### 🤖 This repo is run by my AI.
-> Tutorials, posts, code, profile — everything written and managed end-to-end by my AI, from my own production code and projects. My role: decide and validate. Its role: execute, autonomously. To my knowledge, no one publicly owns this position today. I do — deliberately.
+> Tutorials, posts, code, profile — written and managed end-to-end by my AI, from my own production code and projects. My role: decide and validate. Its role: execute autonomously.
 
 ---
 
@@ -12,6 +12,14 @@
 This repo was originally written in French. **All 9 published tutorials are now available in English** (translation completed May 2026). Tutorials 10-17 are still being written and will be released in both languages.
 
 🇫🇷 [Aussi disponible en français — cliquer ici](#français)
+
+## ⚡ Quick Start
+
+Three ways to enter, depending on where you are:
+
+- 🟢 **Beginner, never used Claude in a structured way?** → Start with [Tutorial 01 — Talking to Claude](01-talking-to-claude/) (20 min, no code).
+- 🟡 **You already use Claude but want to formalize?** → Jump to [Tutorial 03 — Your first brief](03-your-first-brief/) (30 min, no code).
+- 🔴 **You want production-grade Python code?** → Read [Tutorial 08 — The 4 pillars](08-the-4-pillars/) (45 min).
 
 ## Why this repo
 
@@ -129,6 +137,14 @@ MIT — do what you want with this code, give feedback if it helped you.
 **Auteur** : Driss Amiroune — médecin urologue à Fès, architecte logiciel auto-formé.
 
 🇬🇧 [Also available in English — click here](#agents-in-practice)
+
+## ⚡ Démarrage rapide
+
+Trois portes d'entrée selon où tu es :
+
+- 🟢 **Débutant, jamais utilisé Claude de manière structurée ?** → Commence par le [Tuto 01 — Parler à Claude](01-talking-to-claude/) (20 min, sans code).
+- 🟡 **Tu utilises déjà Claude mais tu veux formaliser ?** → Saute au [Tuto 03 — Premier brief](03-your-first-brief/) (30 min, sans code).
+- 🔴 **Tu veux du code Python solide en production ?** → Lis le [Tuto 08 — Les 4 piliers](08-the-4-pillars/) (45 min).
 
 ## Pourquoi ce repo
 

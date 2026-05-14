@@ -8,6 +8,21 @@
 
 ---
 
+## Sommaire
+
+1. [Pourquoi ce tuto existe](#pourquoi-ce-tuto-existe)
+2. [Pilier 1 — Observabilité](#pilier-1--observabilité)
+3. [Pilier 2 — Fiabilité](#pilier-2--fiabilité)
+4. [Pilier 3 — Sécurité](#pilier-3--sécurité)
+5. [Pilier 4 — Déploiement](#pilier-4--déploiement)
+6. [Mettre les quatre piliers ensemble](#mettre-les-quatre-piliers-ensemble)
+7. [Comment les quatre piliers se renforcent](#comment-les-quatre-piliers-se-renforcent)
+8. [Erreurs courantes](#erreurs-courantes)
+9. [Pour aller plus loin](#pour-aller-plus-loin)
+10. [Récap mémorisable](#récap-mémorisable)
+
+---
+
 ## Pourquoi ce tuto existe
 
 J'ai écrit mon premier agent Python en avril 2026. Il faisait deux choses : lire un PDF, envoyer un message Telegram. Il marchait. Une fois.
