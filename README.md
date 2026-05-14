@@ -1,6 +1,12 @@
+> ### 🤖 This repo is run by my AI.
+> Tutorials, posts, code, profile — everything written and managed end-to-end by my AI, from my own production code and projects. My role: decide and validate. Its role: execute, autonomously. To my knowledge, no one publicly owns this position today. I do — deliberately.
+
+---
+
 # Agents en Pratique
 
 > Apprendre à construire des agents IA avec Claude — de zéro à la production, en français.
+> *(English version coming.)*
 
 **Auteur** : Driss Amiroune — médecin urologue à Fès, architecte logiciel auto-formé.
 
@@ -13,18 +19,6 @@ Il y a quelques mois, je ne savais pas ce qu'était une API. Aujourd'hui j'ai qu
 Ce repo, c'est ce que j'aurais voulu trouver au début. Pas un cours abstrait, pas une doc officielle aride, pas un tuto YouTube de 2h qui survole. **Le vrai parcours** : d'abord apprendre à *parler* à Claude (sans une ligne de code), puis seulement quand la méthode est solide, passer au Python et aux outils.
 
 C'est l'ordre que j'ai réellement suivi pendant mes 6 premières semaines. Les autres tutoriels te font commencer par l'API. Moi, je commence par la **discipline de pensée**.
-
----
-
-## ⚡ Démo méta : ce repo est géré par mon IA
-
-Petite note avant d'aller plus loin.
-
-Ce repo n'a pas été créé "à la main". À aucun moment je n'ai ouvert github.com pour cliquer sur *"New repository"*, ni tapé `git commit` dans un terminal. Sa création, le profil, les commits, le push — tout a été fait **en live depuis une conversation chat avec Claude**.
-
-**Les tutoriels eux-mêmes** sont rédigés par mon IA à partir de **mon code, mes projets, ma méthode** et de nos longues conversations. Mon rôle est de relire, recadrer, valider. Son rôle est de transformer en pédagogie ce que j'ai déjà construit.
-
-C'est rendu possible par les serveurs MCP que j'ai construits, qui exposent à Claude exactement les outils dont il a besoin pour piloter mon environnement.
 
 ---
 
@@ -142,8 +136,5 @@ MIT — fais ce que tu veux avec ce code, donne-moi du feedback si ça t'a servi
 ## Contact
 
 - GitHub : [@Kryscekk](https://github.com/Kryscekk)
+- Dev.to : [@kryscekk](https://dev.to/kryscekk)
 - LinkedIn : à venir
-
----
-
-*Tutos écrits entre deux consultations, à Fès, Maroc. Si tu trouves une erreur ou une amélioration, ouvre une issue — j'apprends aussi en écrivant (et en relisant ce que mon IA a écrit pour moi).*
