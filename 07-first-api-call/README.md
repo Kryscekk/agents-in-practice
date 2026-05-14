@@ -142,4 +142,4 @@ Le `pip install anthropic` n'a pas marché. Tu n'as peut-être pas activé ton v
 
 ## Prochain tuto
 
-[02 — Ton premier MCP server](../02-premier-mcp-server/) : passer du script qu'on lance à la main à un agent que Claude peut piloter tout seul.
+[02 — Ton premier MCP server](../09-first-mcp-server/) : passer du script qu'on lance à la main à un agent que Claude peut piloter tout seul.

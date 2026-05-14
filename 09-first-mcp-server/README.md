@@ -50,7 +50,7 @@ Concrètement :
 
 ## Étape 1 — Installer
 
-Depuis le dossier `02-premier-mcp-server/` (ce dossier) :
+Depuis le dossier `09-first-mcp-server/` (ce dossier) :
 
 ```bash
 pip install -r requirements.txt
@@ -103,7 +103,7 @@ Ajoute (ou complète si le fichier existe déjà) :
     "mon-premier-serveur": {
       "command": "python3",
       "args": [
-        "/CHEMIN/ABSOLU/VERS/agents-en-pratique/02-premier-mcp-server/mcp_server.py"
+        "/CHEMIN/ABSOLU/VERS/agents-en-pratique/09-first-mcp-server/mcp_server.py"
       ]
     }
   }
@@ -182,4 +182,4 @@ Regarde les logs de Claude Desktop :
 
 ## Prochain tuto
 
-[**03 — Faire tourner ton agent 24/7 avec systemd**](../03-systemd-pour-agent/) : on prend ce MCP server et on le rend accessible **depuis ton iPhone, depuis n'importe où** — service systemd + nginx + HTTPS. C'est la suite logique.
+[**03 — Faire tourner ton agent 24/7 avec systemd**](../10-systemd-for-your-agent/) : on prend ce MCP server et on le rend accessible **depuis ton iPhone, depuis n'importe où** — service systemd + nginx + HTTPS. C'est la suite logique.
