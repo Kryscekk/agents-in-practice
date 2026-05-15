@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <!-- Fond sombre -->
+  <rect width="1000" height="420" fill="#0d1117"/>
+  
+  <!-- Grille subtile -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#161b22" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="420" fill="url(#grid)" opacity="0.6"/>
+  
+  <!-- Sol de référence -->
+  <line x1="100" y1="340" x2="900" y2="340" stroke="#30363d" stroke-width="2"/>
+  
+  <!-- 4 piliers de hauteurs ≈ égales avec couleurs distinctes -->
+  <g>
+    <!-- Pilier 1 : Reasoning (bleu) -->
+    <rect x="190" y="110" width="120" height="230" fill="#1f6f9f" rx="4"/>
+    <rect x="190" y="100" width="120" height="20" fill="#58a6ff" rx="3"/>
+    <text x="250" y="380" font-family="ui-monospace,monospace" font-size="14" fill="#8b949e" text-anchor="middle">REASONING</text>
+    
+    <!-- Pilier 2 : Validation (orange) -->
+    <rect x="350" y="135" width="120" height="205" fill="#9f6420" rx="4"/>
+    <rect x="350" y="125" width="120" height="20" fill="#f0883e" rx="3"/>
+    <text x="410" y="380" font-family="ui-monospace,monospace" font-size="14" fill="#8b949e" text-anchor="middle">VALIDATION</text>
+    
+    <!-- Pilier 3 : Persistence (vert) -->
+    <rect x="510" y="120" width="120" height="220" fill="#1f6f3d" rx="4"/>
+    <rect x="510" y="110" width="120" height="20" fill="#3fb950" rx="3"/>
+    <text x="570" y="380" font-family="ui-monospace,monospace" font-size="14" fill="#8b949e" text-anchor="middle">PERSISTENCE</text>
+    
+    <!-- Pilier 4 : Resume (rouge cuivré) -->
+    <rect x="670" y="145" width="120" height="195" fill="#8e4030" rx="4"/>
+    <rect x="670" y="135" width="120" height="20" fill="#f85149" rx="3"/>
+    <text x="730" y="380" font-family="ui-monospace,monospace" font-size="14" fill="#8b949e" text-anchor="middle">RESUME</text>
+  </g>
+  
+  <!-- Title en haut, sobre -->
+  <text x="500" y="60" font-family="ui-sans-serif,system-ui,Inter,Helvetica,Arial,sans-serif" font-size="32" fill="#f0f6fc" text-anchor="middle" font-weight="700">The 4 Pillars</text>
+  <text x="500" y="85" font-family="ui-sans-serif,system-ui,Inter,Helvetica,Arial,sans-serif" font-size="14" fill="#8b949e" text-anchor="middle">of a production-grade AI agent</text>
+</svg>

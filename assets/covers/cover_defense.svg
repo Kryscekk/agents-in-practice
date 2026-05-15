@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <!-- Fond sombre -->
+  <rect width="1000" height="420" fill="#0d1117"/>
+  
+  <!-- Grille subtile -->
+  <defs>
+    <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#161b22" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="420" fill="url(#grid2)" opacity="0.6"/>
+  
+  <!-- 3 couches concentriques centrées à droite, comme une forteresse à 3 enceintes -->
+  <g transform="translate(720, 210)">
+    <!-- Couche 1 — Horizontal isolation (bleu, la plus externe) -->
+    <rect x="-160" y="-160" width="320" height="320" rx="20" fill="none" stroke="#1f6f9f" stroke-width="3" opacity="0.9"/>
+    <rect x="-160" y="-160" width="320" height="320" rx="20" fill="#1f6f9f" opacity="0.08"/>
+    <text x="-150" y="-140" font-family="ui-monospace,monospace" font-size="12" fill="#58a6ff" font-weight="600">L1 — HORIZONTAL ISOLATION</text>
+    
+    <!-- Couche 2 — Vertical ordering (orange, intermédiaire) -->
+    <rect x="-110" y="-110" width="220" height="220" rx="15" fill="none" stroke="#9f6420" stroke-width="3" opacity="0.9"/>
+    <rect x="-110" y="-110" width="220" height="220" rx="15" fill="#9f6420" opacity="0.1"/>
+    <text x="-100" y="-90" font-family="ui-monospace,monospace" font-size="12" fill="#f0883e" font-weight="600">L2 — VERTICAL ORDERING</text>
+    
+    <!-- Couche 3 — Longitudinal traceability (vert, la plus interne) -->
+    <rect x="-60" y="-60" width="120" height="120" rx="10" fill="none" stroke="#1f6f3d" stroke-width="3" opacity="0.9"/>
+    <rect x="-60" y="-60" width="120" height="120" rx="10" fill="#1f6f3d" opacity="0.12"/>
+    <text x="-50" y="-40" font-family="ui-monospace,monospace" font-size="10" fill="#3fb950" font-weight="600">L3 — TRACE</text>
+    
+    <!-- DB au centre (rouge = ce qu'on protège) -->
+    <circle cx="0" cy="10" r="22" fill="#0d1117" stroke="#f85149" stroke-width="2"/>
+    <text x="0" y="16" font-family="ui-monospace,monospace" font-size="14" fill="#f85149" text-anchor="middle" font-weight="700">DB</text>
+  </g>
+  
+  <!-- Titre à gauche -->
+  <g transform="translate(70, 130)">
+    <text x="0" y="0" font-family="ui-sans-serif,system-ui,Inter,Helvetica,Arial,sans-serif" font-size="36" fill="#f0f6fc" font-weight="700">Triple defense</text>
+    <text x="0" y="38" font-family="ui-sans-serif,system-ui,Inter,Helvetica,Arial,sans-serif" font-size="36" fill="#f0f6fc" font-weight="700">in depth</text>
+    <text x="0" y="76" font-family="ui-sans-serif,system-ui,Inter,Helvetica,Arial,sans-serif" font-size="15" fill="#8b949e">for production AI agents</text>
+    
+    <!-- Petit caption en bas -->
+    <text x="0" y="170" font-family="ui-monospace,monospace" font-size="11" fill="#6e7681">The model can be perfect.</text>
+    <text x="0" y="188" font-family="ui-monospace,monospace" font-size="11" fill="#6e7681">The middleware is what matters.</text>
+  </g>
+</svg>
