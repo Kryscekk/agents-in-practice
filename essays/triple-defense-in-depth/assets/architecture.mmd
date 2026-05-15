@@ -1,0 +1,57 @@
+graph TB
+    subgraph User["👤 User"]
+        TG[Telegram message<br/>or chat input]
+    end
+
+    subgraph L1["Layer 1 — Horizontal isolation: 4 Claude instances"]
+        direction LR
+        C1[<b>Conversational Claude</b><br/><i>Anthropic web/mobile + MCP</i><br/>✅ Architecture decisions<br/>❌ Never writes data]:::conv
+        C2[<b>Claude Code</b><br/><i>code-runner user, terminal</i><br/>✅ Heavy execution<br/>❌ Sandboxed, no git push]:::code
+        C3[<b>Telegram bot Claude</b><br/><i>long-running daemon</i><br/>✅ 13 read-only tools + 1 trigger<br/>❌ No DB write tool exists]:::bot
+        C4[<b>Pipeline agent Claude</b><br/><i>spawned per phase</i><br/>✅ Strict JSON via tool_use<br/>❌ Output validated by Python first]:::agent
+    end
+
+    subgraph L2["Layer 2 — Vertical ordering: blocking state machine (12 phases)"]
+        direction LR
+        S1[init] --> S2[loaded] --> S3[analyzed] --> S4[characterized]
+        S4 --> S5[contextualized] --> S6[classified] --> S7[ke_set]
+        S7 --> S8[g_set] --> S9[estimated] --> S10[valued]
+        S10 --> S11[checked] --> S12[written]
+    end
+
+    subgraph Gate["🛑 Deterministic gate"]
+        V[<b>Python validator</b><br/>assert each field<br/>30+ char justification<br/>profile compatibility<br/>state transition check]:::gate
+    end
+
+    subgraph DB["🗄️ SQLite (Layer 3 — Longitudinal traceability)"]
+        direction LR
+        T1[(claude_calls<br/>532 rows<br/>cost, tokens, batch_id)]:::trace
+        T2[(agent_*_state<br/>NEW/RUNNING/DONE/FAILED<br/>crash-resume safe)]:::state
+        T3[(scores + reasoning<br/>narrative + cross_checks<br/>audit-ready)]:::business
+    end
+
+    TG -->|natural language| C3
+    C3 -.->|fire-and-forget trigger| C4
+    C1 -.->|delegates heavy tasks| C2
+    
+    C4 ==>|JSON output| V
+    V ==>|✓ assertions pass| L2
+    V -.->|✗ fail| FAIL[Agent marked FAILED<br/>error logged<br/>NO DB write]:::failed
+    
+    L2 ==>|persist on success| DB
+    V ==>|every call logged| T1
+
+    classDef conv fill:#3b5bdb,stroke:#1864ab,color:#fff,stroke-width:2px
+    classDef code fill:#5c940d,stroke:#2b8a3e,color:#fff,stroke-width:2px
+    classDef bot fill:#e67700,stroke:#d9480f,color:#fff,stroke-width:2px
+    classDef agent fill:#862e9c,stroke:#5f3dc4,color:#fff,stroke-width:2px
+    classDef gate fill:#fff3bf,stroke:#fab005,color:#000,stroke-width:3px
+    classDef trace fill:#d0ebff,stroke:#1971c2,color:#000
+    classDef state fill:#ffe8cc,stroke:#e8590c,color:#000
+    classDef business fill:#d3f9d8,stroke:#2f9e44,color:#000
+    classDef failed fill:#ffc9c9,stroke:#c92a2a,color:#000,stroke-width:2px
+
+    style L1 fill:#f8f9fa,stroke:#495057
+    style L2 fill:#f8f9fa,stroke:#495057
+    style Gate fill:#fff9db,stroke:#fab005,stroke-width:3px
+    style DB fill:#f8f9fa,stroke:#495057

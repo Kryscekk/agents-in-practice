@@ -43,6 +43,16 @@ That's the order I actually followed during my first 6 weeks. Other tutorials ma
 
 None of these systems is open source — they hold sensitive data (patients, accounts). But **the patterns I built along the way will land here, as tutorials**, as they become stable enough to be pedagogically clear.
 
+
+
+---
+
+## Essays
+
+Reflections on architecture patterns that emerged from running these systems in production. Less step-by-step, more "here's what broke, here's what fixed it."
+
+- 📖 [**Triple defense in depth for AI agents**](essays/triple-defense-in-depth/) (May 2026) — How to keep Claude away from production data through horizontal isolation + vertical ordering + longitudinal traceability. Written after the PocketOS incident of April 2026.
+
 ## Tutorials
 
 ✅ = published  ·  🇬🇧 = English version available  ·  🇫🇷 = French only (translation in progress)  ·  🚧 = being written
