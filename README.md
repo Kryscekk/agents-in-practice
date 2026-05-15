@@ -83,6 +83,7 @@ None of these systems is open source — they hold sensitive data (patients, acc
 | **15** | URL screenshots from your agent | [`15-url-screenshot/`](15-url-screenshot/) | 🚧 |
 | **16** | Free web search from your agent | [`16-web-search/`](16-web-search/) | 🚧 |
 | **17** | Weekly digest of YouTube videos | [`17-youtube-digest/`](17-youtube-digest/) | 🚧 |
+| **18** | Triple defense in depth for AI agents | [`18-defense-in-depth/`](18-defense-in-depth/) | 🚧 |
 
 ## Who it's for
 
@@ -194,6 +195,7 @@ C'est l'ordre que j'ai réellement suivi pendant mes 6 premières semaines. Les 
 | **15** | Screenshot d'une URL depuis ton agent | [`15-url-screenshot/`](15-url-screenshot/) | 🚧 |
 | **16** | Recherche web gratuite depuis ton agent | [`16-web-search/`](16-web-search/) | 🚧 |
 | **17** | Digest hebdo de vidéos YouTube | [`17-youtube-digest/`](17-youtube-digest/) | 🚧 |
+| **18** | Triple défense en profondeur pour agents IA | [`18-defense-in-depth/`](18-defense-in-depth/) | 🚧 |
 
 ## Contact
 
