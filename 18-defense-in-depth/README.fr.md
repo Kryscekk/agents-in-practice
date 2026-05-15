@@ -19,7 +19,7 @@ C'est le pattern qui aurait évité l'incident PocketOS (avril 2026, un agent IA
 ## Article compagnon
 
 **Article long format sur Dev.to** (à lire en premier) :
-*"AI agent governance: how I built triple defense in depth for production AI agents"* — [lien à ajouter à la publication]
+*"AI agent governance: how I built triple defense in depth for production AI agents"* — https://gist.github.com/Kryscekk/efb334ed334f7ee15e84cd307225bd1c
 
 L'article couvre le raisonnement complet, l'analyse de l'incident PocketOS, et une comparaison honnête avec Langfuse, pytransitions, et les subagents Claude Code.
 
